@@ -1,0 +1,37 @@
+1. Program.cs (Configuração da aplicação)
+Este código configura e inicializa uma aplicação ASP.NET Core. Ele:
+
+Configura o Entity Framework com uma conexão MySQL.
+Adiciona serviços como Swagger (para documentação da API) e CORS (para controle de acesso a recursos).
+Define o uso de HTTPS, autenticação e mapeamento de controladores para as rotas da API.
+Habilita a interface Swagger em ambientes de desenvolvimento e produção.
+
+2. QuizContext.cs (Contexto do banco de dados)
+O QuizContext representa o banco de dados. Ele:
+
+Define as tabelas Usuarios e Resultado como DbSet (conjuntos de dados que o Entity Framework irá gerenciar).
+Configura Resultado como uma entidade sem chave (dados que não precisam de chave primária).
+3. AutenticacaoController.cs (Controller de autenticação)
+Este controlador lida com o login. Ele:
+
+Verifica se o usuário existe no banco de dados com base no email e senha hash.
+Retorna uma resposta de sucesso (logado) ou de erro (não autorizado).
+
+4. CadastroController.cs (Controller de cadastro)
+Este controlador lida com operações CRUD para usuários. Ele:
+
+Obtém todos os usuários ou um específico (GET).
+Adiciona um novo usuário (POST).
+Atualiza um usuário existente (PUT).
+Remove um usuário (DELETE).
+
+5. Usuario.cs e Resultado.cs (Modelos de dados)
+Usuario: Representa um usuário no sistema com propriedades como Id, Nome, Email e SenhaHash.
+Resultado: Representa o resultado de um teste ou questionário, com propriedades relacionadas ao perfil e resultados do teste.
+
+6. appsettings.json (Arquivo de configuração)
+Este arquivo contém:
+
+Configurações de logging (nível de severidade das mensagens de log).
+A string de conexão para o banco de dados MySQL.
+Configurações de hosts permitidos para a aplicação.
